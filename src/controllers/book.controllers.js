@@ -5,7 +5,7 @@ export const getAllBooks = async (req, res) => {
         const books = await Books.findAll();
         res.status(200).json(books)
     } catch (error) {
-        res.status(500).json({error: "No se pudo obtener todos los personajes"})
+        res.status(500).json({error: "No se pudo obtener todos los libros"})
     }
 };
 
@@ -49,5 +49,19 @@ export const createBook = async (req, res) => {
         } else {
             res.status(500).json({ error: "Error al crear el libro"});
         }
+    }
+};
+
+// Para eliminar un libro
+export const deleteBook = async (req, res) => {
+    try {
+        const book = await Books.findByPk(req.params.id);
+        if (!book) {
+            return res.status(404).json({ error: "No se encontró el libro"});
+        }
+        await book.destroy();
+        res.status(200).json({message: "Se eliminó el libro exitosamente"});
+    } catch (error) {
+        res.status(500).json({error: "No se pudo eliminar el libro"})
     }
 };

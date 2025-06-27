@@ -4,9 +4,10 @@ import {
     getAllBooks,
     getBookById,
     createBook,
+    deleteBook,
 } from "../controllers/book.controllers.js";
 
-//    getAllBooks, getBookById, createBook, updateBook, deleteBook,
+//   updateBook,
 // dejo separado para que no me de errores
 
 const router = Router();
@@ -14,7 +15,7 @@ const router = Router();
 router.get("/", getAllBooks);
 router.get("/:id", getBookById);
 router.post("/", createBook);
-/* router.put("/:id", updateBook);
-router.delete("/:id", deleteBook); */
+/* router.put("/:id", updateBook); */
+router.delete("/:id", deleteBook);
 
 export default router;
