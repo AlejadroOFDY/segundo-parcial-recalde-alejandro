@@ -52,6 +52,14 @@ export const createBook = async (req, res) => {
     }
 };
 
+export const updateBook = async (req, res) => {
+    try {
+
+    } catch {
+
+    }
+};
+
 // Para eliminar un libro
 export const deleteBook = async (req, res) => {
     try {
