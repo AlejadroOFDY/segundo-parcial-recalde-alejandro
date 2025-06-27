@@ -6,11 +6,13 @@ import { startDb } from "./src/config/database.js";
 
 dotenv.config();
 
+// Configurando el Puerto y App
+const PORT = process.env.PORT || 3000;
+const app = express();
+
 app.use(express.json());
 app.use("/api/books", bookRoutes)
 
-// Configurando el Puerto
-const PORT = process.env.PORT || 3000;
 
 // Me avisará que el servidor está levantado
 app.listen(PORT, async () => {
