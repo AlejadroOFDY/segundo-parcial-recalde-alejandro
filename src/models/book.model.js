@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
 
+// Esto es la estructura que tendrá todo en la BD
 const Books = sequelize.define("Book", {
     title: {
     type: DataTypes.STRING(),

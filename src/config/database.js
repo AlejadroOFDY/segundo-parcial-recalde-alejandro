@@ -13,6 +13,7 @@ export const sequelize = new Sequelize(
   }
 );
 
+// Sacado de la documentación de Sequelize, me ayudará a saber si la BD se conectó o no
 export const startDb = async () => {
   try {
   await sequelize.authenticate();
